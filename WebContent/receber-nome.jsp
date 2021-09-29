@@ -28,6 +28,5 @@
 	
 	<% //response.sendRedirect("/cadastro") %>
 	
-	
 </body>
 </html>

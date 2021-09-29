@@ -34,6 +34,11 @@
 	<%= cont %>
 	<br>
 	<%= retorna(8) %>
+	
+	<br>
+	
+	<%//o parametro vem das tags no arquivo web.xml %>
+	<%= application.getInitParameter("estado") %>
 
 </body>
 </html>
