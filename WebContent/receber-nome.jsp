@@ -28,5 +28,9 @@
 	
 	<% //response.sendRedirect("/cadastro") %>
 	
+	<br>
+	
+	<%= session.getAttribute("curso") %>
+	
 </body>
 </html>

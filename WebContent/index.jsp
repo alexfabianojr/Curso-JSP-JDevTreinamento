@@ -39,6 +39,8 @@
 	
 	<%//o parametro vem das tags no arquivo web.xml %>
 	<%= application.getInitParameter("estado") %>
+	
+	<% session.setAttribute("curso", "jsp"); %>
 
 </body>
 </html>
