@@ -8,13 +8,18 @@
 </head>
 <body>
 	<% 
+		//recebendo parametros
 		String nome = "Nome recebido: " + request.getParameter("nome");
 		out.print(nome); 
 	%>
 	
+	
 	<%=
+	//tag expressao
 		"Nome recebido: " +
 		request.getParameter("nome")
 	%>
+	
+	
 </body>
 </html>

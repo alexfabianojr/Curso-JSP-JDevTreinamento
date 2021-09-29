@@ -10,14 +10,30 @@
 	<h1>Bem vindo ao curso de JSP</h1>
 	<% //out.print("seu sucesso garantido");%>
 	
-	<%= "seu sucesso garantido" %>
+	
+	<%=
+	//tag expressao
+	"seu sucesso garantido" %>
 	
 	
-	
+	<%//passando parametros %>
 	<form action="receber-nome.jsp">
 		<input type="text" id="nome" name="nome">
 		<input type="submit" value="Enviar">
 	</form>
+	
+		<%! //tag declarativa 
+	int cont = 2;
+		
+		public int retorna(int n) {
+			return n * 3;
+		}
+		
+		%>
+	
+	<%= cont %>
+	<br>
+	<%= retorna(8) %>
 
 </body>
 </html>
