@@ -13,12 +13,20 @@
 		out.print(nome); 
 	%>
 	
+	<br>
 	
 	<%=
 	//tag expressao
 		"Nome recebido: " +
 		request.getParameter("nome")
 	%>
+	
+	<p/>
+	
+	<% //request e response sao objetos implicitos %>
+	<%= request.getContextPath() %>
+	
+	<% //response.sendRedirect("/cadastro") %>
 	
 	
 </body>
