@@ -41,6 +41,16 @@
 	<%= application.getInitParameter("estado") %>
 	
 	<% session.setAttribute("curso", "jsp"); %>
+	
+	<br>
+	
+	<%@ page import="java.util.Date" %>
+	
+	<%= "Data de hoje: " + new Date() %>
+	
+	<%@ page info="Pagina do curso jsp / essa propriedade pode ser pega no lado da servlet tbm" %>
+	
+	<%@ page errorPage="errorPage.jsp" %>
 
 </body>
 </html>
