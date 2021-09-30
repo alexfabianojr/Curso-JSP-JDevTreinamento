@@ -32,5 +32,9 @@
 	
 	<%= session.getAttribute("curso") %>
 	
+		<br>
+	
+	<%@ include file="pagina-include.jsp" %>
+	
 </body>
 </html>

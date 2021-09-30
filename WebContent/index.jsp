@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    <%@ taglib prefix="myprefix" uri="/WEB-INF/testetag.tld" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -51,6 +54,12 @@
 	<%@ page info="Pagina do curso jsp / essa propriedade pode ser pega no lado da servlet tbm" %>
 	
 	<%@ page errorPage="errorPage.jsp" %>
+	
+	<br>
+	
+	<%@ include file="pagina-include.jsp" %>
+	
+	<myprefix:minhatag/>
 
 </body>
 </html>
