@@ -36,5 +36,9 @@
 	
 	<%@ include file="pagina-include.jsp" %>
 	
+	<br>
+	
+	<%= request.getParameter("JDev")%>
+	
 </body>
 </html>

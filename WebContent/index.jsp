@@ -61,5 +61,11 @@
 	
 	<myprefix:minhatag/>
 
+	<jsp:plugin code="" codebase="" type="bean">
+		<jsp:params>
+			<jsp:param value="curso-de-jsp" name="JDev"/>
+		</jsp:params>
+	</jsp:plugin>
+
 </body>
 </html>
