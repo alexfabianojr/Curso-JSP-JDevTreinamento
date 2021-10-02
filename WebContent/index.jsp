@@ -70,7 +70,7 @@
 		<input type="text" id="nome" name="nome" value="alex">
 		<input type="text" id="ano" name="ano" value="1999">
 		<input type="text" id="sexo" name="sexo" value="M">
-		<input type="submit" value="testar"">
+		<a href="cabecalho.jsp"><input type="submit" value="testar""></a>
 	</form>
 	
 	<br>
@@ -84,6 +84,8 @@
 	</jsp:plugin>
 	
 	<jsp:include page="rodape.jsp"/>
+	
+	<% session.setAttribute("user", "javaavancado"); %>
 	
 </body>
 </html>

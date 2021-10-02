@@ -9,6 +9,17 @@
 		<jsp:getProperty property="ano" name="calcula"/>
 		<jsp:getProperty property="sexo" name="calcula"/>
 		
+		<p>
+			Nome: ${param.nome}
+		</p>
+		<p>
+			Ano: ${param.ano}
+		</p>
+		<p>
+			Sexo: ${param.sexo}
+		</p>
+		
+		<p>${sessionScope.user}</p>
 		
 	</body>
 </html>
