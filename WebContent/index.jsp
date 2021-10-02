@@ -62,6 +62,19 @@
 	
 	<%= calcula.calcula(50) %>
 	
+	<jsp:setProperty property="*" name="calcula"/>
+	
+	<br>
+	
+	<form action="cabecalho.jsp" method="post">
+		<input type="text" id="nome" name="nome" value="alex">
+		<input type="text" id="ano" name="ano" value="1999">
+		<input type="text" id="sexo" name="sexo" value="M">
+		<input type="submit" value="testar"">
+	</form>
+	
+	<br>
+	
 	<myprefix:minhatag/>
 
 	<jsp:plugin code="" codebase="" type="bean">
