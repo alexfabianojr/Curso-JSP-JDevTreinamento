@@ -1,8 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-    <%@ taglib prefix="myprefix" uri="/WEB-INF/testetag.tld" %>
-    
+<jsp:useBean id="calcula" class="beans.BeanCursoJsp" type="beans.BeanCursoJsp" scope="page"></jsp:useBean>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="myprefix" uri="/WEB-INF/testetag.tld" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+	<jsp:include page="cabecalho.jsp"/>
+
 	<h1>Bem vindo ao curso de JSP</h1>
 	<% //out.print("seu sucesso garantido");%>
 	
@@ -59,6 +60,8 @@
 	
 	<%@ include file="pagina-include.jsp" %>
 	
+	<%= calcula.calcula(50) %>
+	
 	<myprefix:minhatag/>
 
 	<jsp:plugin code="" codebase="" type="bean">
@@ -66,6 +69,8 @@
 			<jsp:param value="curso-de-jsp" name="JDev"/>
 		</jsp:params>
 	</jsp:plugin>
-
+	
+	<jsp:include page="rodape.jsp"/>
+	
 </body>
 </html>
