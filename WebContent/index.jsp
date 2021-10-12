@@ -1,7 +1,7 @@
 <jsp:useBean id="calcula" class="beans.BeanCursoJsp" type="beans.BeanCursoJsp" scope="page"></jsp:useBean>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="myprefix" uri="/WEB-INF/testetag.tld" %>    
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -87,6 +87,68 @@
 	<jsp:include page="rodape.jsp"/>
 	
 	<% session.setAttribute("user", "javaavancado"); %>
+	
+	<!-- jstl -->
+	
+	<div>
+	<c:out value="${'Bem vindo ao modulo de JSTL'}"/>
+	
+	<c:set var="data" scope="page" value="${500 * 6}"></c:set>
+	
+	<c:import var="data" url="https://www.google.com.br"/>
+	
+	</div>
+	
+	<!-- <c:out value="${data}"></c:out> -->
+	
+	<c:catch var="erroDeclarado">
+		<% int valor = 100/0; %>
+	</c:catch>
+	
+	<c:if test="${erroDeclarado != null }">
+		${erroDeclarado.message}
+	</c:if>
+	
+	<br>
+	
+	<c:set var="numeroVar" value="${100 / 10 }"></c:set>
+	
+	<c:choose>
+		<c:when test="${numeroVar > 50 }">
+			<c:out value="${'Maior que 50'}"></c:out>
+		</c:when>
+		<c:when test="${numeroVar < 50 }">
+			<c:out value="${'Menor que 50'}"></c:out>
+		</c:when>
+		<c:otherwise>
+			<c:out value="${'numeroVar = 50'} }"></c:out>
+		</c:otherwise>
+	</c:choose>
+	
+	<c:forEach var="n" begin="1" end="${numeroVar}">
+		Loop: ${n}
+	</c:forEach>
+	
+	<!-- forTokens quebra uma string por determinado criterio -->
+	<c:forTokens items="Alex-Fabiano-Nome" delims="-" var="tokenNome">
+		<br>
+		Nome: <c:out value="${tokenNome}"></c:out>
+	</c:forTokens>
+	
+	<br>
+		
+	<c:url value="/loginLiberado.jsp" var="acesso">
+		<c:param name="param1" value="123"></c:param>
+		<c:param name="param2" value="567"></c:param>
+	</c:url>
+	
+	${acesso}
+	
+	<br>
+	
+	<c:if test="${numeroVar > 50}">
+		<c:redirect url="https://www.google.com.br"></c:redirect>
+	</c:if>
 	
 </body>
 </html>
