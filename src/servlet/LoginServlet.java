@@ -10,11 +10,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import beans.BeanLoginJsp;
+import dao.DaoLogin;
 
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
+	
+	private DaoLogin daoLogin = new DaoLogin();
 
     public LoginServlet() {
         super();
@@ -31,14 +34,21 @@ public class LoginServlet extends HttpServlet {
 		String login = request.getParameter("login");
 		String senha = request.getParameter("senha");
 		RequestDispatcher requestDispatcher = null;
-		if (loginBean.podeLogar(login, senha)) {
-			System.out.println("Logado com sucesso!");
-			requestDispatcher = request.getRequestDispatcher("loginLiberado.jsp");
-		} else {
-			System.out.println("Acesso negado ao sistema");
-			requestDispatcher = request.getRequestDispatcher("loginNegado.jsp");
-		}
+//		if (loginBean.podeLogar(login, senha)) {
+		try {
+			if (daoLogin.validarLogin(login, senha)) {
+
+				System.out.println("Logado com sucesso!");
+				requestDispatcher = request.getRequestDispatcher("loginLiberado.jsp");
+			} else {
+				System.out.println("Acesso negado ao sistema");
+				requestDispatcher = request.getRequestDispatcher("loginNegado.jsp");
+			}
 		requestDispatcher.forward(request, response);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
