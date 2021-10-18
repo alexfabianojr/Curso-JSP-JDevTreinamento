@@ -11,6 +11,8 @@
 	<h3>
 		Nao foi possivel autenticar o login
 	</h3>
+	
+	<a href="cadastro-usuario.jsp">Cadastro Usuario</a>
 
 </body>
 </html>
